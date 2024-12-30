@@ -1,5 +1,105 @@
-# Add commands to whitelist (one per line)
-# You can use exact commands or patterns with *
-# Example:
+# Comprehensive Whitelist
+# File System Reading & Inspection (no writes/modifications)
 ls *
+ll *
+pwd
+tree *
+find * -name *
+cat *
+head *
+tail * -n *
+less *
+more *
+file *
+
+# System Information (read-only)
+uname *
+whoami
+df -h
+du -h *
+free -h
+uptime
+date
+which *
+whereis *
+
+# Process Inspection (no kill/modify)
+ps aux
+ps -ef
+pgrep *
+top -n 1
+
+# Network Information (no transfers)
+ip addr show
+ip link show
+hostname
+netstat -tulpn
+ss -tulpn
+
+# Package Information (no installs/updates)
+apt list
+apt search *
+apt show *
+apt policy *
+dnf list
+dnf search *
+dnf info *
+
+# Git Information (no repository changes)
 git status
+git diff
+git log *
+git branch
+git remote -v
+git stash list
+git stash show *
+git rev-parse --abbrev-ref HEAD
+git config --get *
+
+# Python Information (no installs)
+python --version
+python -m pip list
+python -m pip show *
+python -m pip freeze
+
+# Version Checks
+node --version
+npm --version
+docker --version
+gcc --version
+python3 --version
+
+# Docker Information (no container/image modifications)
+docker ps
+docker images
+docker volume ls
+docker network ls
+docker inspect *
+
+# Text Reading/Search (no modifications)
+grep * *
+wc *
+sort *
+uniq *
+
+# Environment Information
+env | grep *
+printenv | grep *
+echo $*
+
+# Service Information (no modifications)
+systemctl status *
+journalctl -u *
+
+# Version Information
+code --version
+vim --version
+nano --version
+make --version
+gcc --version
+
+# Disk & Performance Information
+vmstat
+iostat
+df *
+lsblk

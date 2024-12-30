@@ -19,8 +19,13 @@ class WhitelistManager:
             ]
     
     def is_whitelisted(self, command):
-        """Check if a command matches any whitelist pattern."""
-        return any(
-            fnmatch.fnmatch(command.strip(), pattern)
-            for pattern in self.whitelist
-        )
+        # Split the compound command and strip whitespace
+        individual_commands = [cmd.strip() for cmd in command.split('&&')]
+        
+        # Check each command separately
+        for cmd in individual_commands:
+            if not any(fnmatch.fnmatch(cmd.strip(), pattern) for pattern in self.whitelist):
+                return False
+        
+        # Only return True if all commands matched
+        return True
