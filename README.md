@@ -29,6 +29,8 @@ pip install -r requirements.txt
 ```
 
 4. Set up your Gemini API key:
+
+ - Create a new API key in [Google AI Studio](https://aistudio.google.com/apikey)
 ```bash
 export GEMINI_API_KEY='your-api-key-here'
 ```
