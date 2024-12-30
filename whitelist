@@ -1,0 +1,5 @@
+# Add commands to whitelist (one per line)
+# You can use exact commands or patterns with *
+# Example:
+ls *
+git status
